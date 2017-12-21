@@ -1,0 +1,148 @@
+{
+  "project_info": {
+    "project_number": "944205077506",
+    "firebase_url": "https://levenmark-pruebas.firebaseio.com",
+    "project_id": "levenmark-pruebas",
+    "storage_bucket": "levenmark-pruebas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944205077506:android:364bea233b264bee",
+        "android_client_info": {
+          "package_name": "levenmark.com.pets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944205077506-3119k9qqeggh1e0mj01aqkd1l5vbuc5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByE3FXBxHp8TGo4opUyLI8yZm0opNSvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944205077506:android:c526ff9d07686f88",
+        "android_client_info": {
+          "package_name": "levenmark.com.tests"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944205077506-3119k9qqeggh1e0mj01aqkd1l5vbuc5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByE3FXBxHp8TGo4opUyLI8yZm0opNSvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944205077506:android:c3a3d4bfaa1539b1",
+        "android_client_info": {
+          "package_name": "com.levenmark.quinielilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944205077506-3119k9qqeggh1e0mj01aqkd1l5vbuc5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByE3FXBxHp8TGo4opUyLI8yZm0opNSvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944205077506:android:eea4f30ddc0eb2bb",
+        "android_client_info": {
+          "package_name": "com.example.levenmark.quinielilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944205077506-91mq4qmnm23dlqhduikp0mleiaqi1ip8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.levenmark.quinielilla",
+            "certificate_hash": "4a7f9e99857d3485769c6d14539de66ef2385b51"
+          }
+        },
+        {
+          "client_id": "944205077506-3119k9qqeggh1e0mj01aqkd1l5vbuc5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByE3FXBxHp8TGo4opUyLI8yZm0opNSvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944205077506-3119k9qqeggh1e0mj01aqkd1l5vbuc5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
