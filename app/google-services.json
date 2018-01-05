@@ -108,6 +108,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "944205077506-svbh7tke2r4eseoc7mp72ntu6jneojhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.levenmark.quinielilla",
+            "certificate_hash": "1490f5fe1d9bd5df299c45525f00c27e9acd3517"
+          }
+        },
+        {
           "client_id": "944205077506-91mq4qmnm23dlqhduikp0mleiaqi1ip8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

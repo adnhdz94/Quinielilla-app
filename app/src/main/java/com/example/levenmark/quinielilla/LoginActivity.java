@@ -29,6 +29,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String TAG = "QUINIELILLA" ;
     private FirebaseAuth mAuth;
 
+
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
@@ -75,6 +77,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPhoneNumber;
     private View mProgressView;
     private View mLoginFormView;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallsBacks;
 
@@ -113,11 +117,35 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mAuth= FirebaseAuth.getInstance();
 
-
+        mAuthListener= new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user= firebaseAuth.getCurrentUser();
+                if (user !=null){
+                  Log.d(QuinielillaTags.TAG_LOGIN,"Usuario "+user.getUid());
+                }else{
+                    Log.d(QuinielillaTags.TAG_LOGIN,"Error de logueo");
+                }
+            }
+        };
 
     }
 
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+        private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -241,14 +269,26 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             } else {
                 // Show a progress spinner, and kick off a background task to
                 // perform the user login attempt.
-                showProgress(true);
 
+                showProgress(true);
+                mAuth.createUserWithEmailAndPassword(email, password).
+                        addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                              Log.d(QuinielillaTags.TAG_LOGIN,"Creación de usuario completa"+task.isSuccessful());
+                                showProgress(false);
+                              if(!task.isSuccessful()){
+                                  Toast.makeText(LoginActivity.this,
+                                          R.string.error_auth,Toast.LENGTH_SHORT).show();
+                                  showProgress(false);
+                              }
+                            }
+                        });
             }
         }else{
             showProgress(true);
             PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber,60, TimeUnit.SECONDS,this,mCallsBacks);
-            
-
+            showProgress(false);
         }
 
     }
